@@ -1,5 +1,6 @@
 #ToyFactory class
 from Toy import Toy
+from Package import Package
 
 class ToyFactory:
 
@@ -17,7 +18,7 @@ class ToyFactory:
         #status message - blank
         self.message = ""
 
-    def makeToy(self, name):
+    def makeToy(self, name, label):
         #grabParts() --> if false print message
         #assemble() --> if false print message
         # if (grabParts() && assemble()):
@@ -25,7 +26,7 @@ class ToyFactory:
         #else:
         #   print message
         if (self.grabParts() and self.assemble()):
-            return Toy(name)
+            return Package(Toy(name), label)
 
     def grabParts(self):
         self.heads = self.heads - 1
