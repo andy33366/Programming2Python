@@ -26,8 +26,9 @@ class ToyFactory:
         #else:
         #   print message
         if (self.grabParts() and self.assemble()):
-            self.message = "Packaging parts"
+            #returns a package with the toy object and label
             return Package(Toy(name), label)
+
 
     def grabParts(self):
         self.heads = self.heads - 1
